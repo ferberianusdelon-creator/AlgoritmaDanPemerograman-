@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Antrian Loket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📋 Sistem Antrian Loket</h1>
+
+  <div class="container">
+    <input type="text" id="namaInput" placeholder="Masukkan nama">
+    <button onclick="tambahAntrian()"> Tambah Antrian</button>
+    <button onclick="panggilAntrian()"> Panggil Antrian</button>
+
+    <div class="display">
+      <p>Sedang Dilayani</p>
+      <h2 id="sedangDilayani">--</h2>
+    </div>
+
+    <div class="queue-list">
+      <p><b>Daftar Antrian:</b></p>
+      <div id="daftarAntrian">Kosong</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
