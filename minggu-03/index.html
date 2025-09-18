@@ -3,45 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sistem Antrian Loket</title>
+  <title>Sistem Antrian Loket — Modern</title>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
-    <main class="card" role="main" aria-labelledby="title">
-      <h1 id="title">Sistem Antrian Loket</h1>
-
-      <!-- form: input + tombol (sejajar) -->
-      <form id="form" class="form" onsubmit="return false;">
-        <input id="namaInput" class="input" autocomplete="off" placeholder="Masukkan nama" aria-label="Nama pengunjung">
-        <div class="btn-group">
-          <button type="button" id="btnTambah" class="btn btn-add" title="Tambah ke antrian">Tambah</button>
-          <button type="button" id="btnPanggil" class="btn btn-call" title="Panggil berikutnya">Panggil</button>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#fff" opacity="0.08"/>
+          <path d="M7 12h10M7 8h10M7 16h6" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <div class="title">Sistem Antrian Loket</div>
+          <div class="subtitle">Sederhana • Cepat • Modern</div>
         </div>
-      </form>
+      </div>
+    </header>
 
-      <!-- inline message -->
-      <div id="message" class="message" aria-live="polite" role="status"></div>
+    <main class="card" role="main" aria-labelledby="appTitle">
+      <h1 id="appTitle" class="hidden">Sistem Antrian Loket</h1>
 
-      <!-- display antrian (LED-like) -->
-      <section class="display" id="display" aria-live="polite">
+      <!-- form row -->
+      <div class="row form-row">
+        <input id="namaInput" class="input" type="text" placeholder="Masukkan nama" aria-label="Nama pengunjung">
+        <div class="actions">
+          <button id="btnTambah" class="btn btn-gradient" title="Tambah antrian" aria-label="Tambah antrian">
+            <!-- plus icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 5v14M5 12h14" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Tambah</span>
+          </button>
+          <button id="btnPanggil" class="btn btn-call" title="Panggil berikutnya" aria-label="Panggil berikutnya">
+            <!-- speaker icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 8a5 5 0 010 8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <span>Panggil</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
+
+      <!-- display LED -->
+      <section id="display" class="display" aria-live="polite">
         <div class="label">Sedang Dilayani</div>
         <div id="displayValue" class="value">--</div>
       </section>
 
-      <!-- lists: daftar antrian + riwayat panggilan -->
+      <!-- lists -->
       <section class="lists">
         <div class="list">
-          <h2>Daftar Antrian</h2>
+          <h3>Daftar Antrian</h3>
           <div id="daftarAntrian" class="list-body">Kosong</div>
         </div>
 
         <div class="list">
-          <h2>Riwayat Panggilan</h2>
+          <h3>Riwayat Panggilan</h3>
           <div id="riwayat" class="list-body">Belum ada panggilan</div>
         </div>
       </section>
