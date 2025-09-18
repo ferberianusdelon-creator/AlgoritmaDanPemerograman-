@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Antrian Loket</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sistem Antrian Loket</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>📋 Sistem Antrian Loket</h1>
+  <div class="page">
+    <main class="card" role="main" aria-labelledby="title">
+      <h1 id="title">Sistem Antrian Loket</h1>
 
-  <div class="container">
-    <input type="text" id="namaInput" placeholder="Masukkan nama">
-    <button onclick="tambahAntrian()"> Tambah Antrian</button>
-    <button onclick="panggilAntrian()"> Panggil Antrian</button>
+      <!-- form: input + tombol (sejajar) -->
+      <form id="form" class="form" onsubmit="return false;">
+        <input id="namaInput" class="input" autocomplete="off" placeholder="Masukkan nama" aria-label="Nama pengunjung">
+        <div class="btn-group">
+          <button type="button" id="btnTambah" class="btn btn-add" title="Tambah ke antrian">Tambah</button>
+          <button type="button" id="btnPanggil" class="btn btn-call" title="Panggil berikutnya">Panggil</button>
+        </div>
+      </form>
 
-    <div class="display">
-      <p>Sedang Dilayani</p>
-      <h2 id="sedangDilayani">--</h2>
-    </div>
+      <!-- inline message -->
+      <div id="message" class="message" aria-live="polite" role="status"></div>
 
-    <div class="queue-list">
-      <p><b>Daftar Antrian:</b></p>
-      <div id="daftarAntrian">Kosong</div>
-    </div>
+      <!-- display antrian (LED-like) -->
+      <section class="display" id="display" aria-live="polite">
+        <div class="label">Sedang Dilayani</div>
+        <div id="displayValue" class="value">--</div>
+      </section>
+
+      <!-- lists: daftar antrian + riwayat panggilan -->
+      <section class="lists">
+        <div class="list">
+          <h2>Daftar Antrian</h2>
+          <div id="daftarAntrian" class="list-body">Kosong</div>
+        </div>
+
+        <div class="list">
+          <h2>Riwayat Panggilan</h2>
+          <div id="riwayat" class="list-body">Belum ada panggilan</div>
+        </div>
+      </section>
+    </main>
   </div>
 
   <script src="script.js"></script>
