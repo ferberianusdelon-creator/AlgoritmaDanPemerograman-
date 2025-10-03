@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f9ff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 60%;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.kamus-box {
+  background: #f8faff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.kamus-box h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.kamus-box p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.grid-kamus {
+  display: inline-flex;
+  gap: 50px;
+}
+
+.grid-kamus ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-kamus li {
+  line-height: 1.8;
+  color: #34495e;
+  text-align: left;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+#hasil {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+#hasil.sukses {
+  color: green;
+}
+
+#hasil.gagal {
+  color: red;
+}
