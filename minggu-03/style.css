@@ -1,95 +1,266 @@
+/* Background animasi gradient */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #00c6ff, #0072ff, #7b2ff7, #f107a3);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+}
 :root{
-  --card-width: min(420px, 92vw);
-  --accent: #00d084;
-  --muted: rgba(255,255,255,0.12);
-  --glass: rgba(255,255,255,0.08);
+  --accent: #00ffa5;
+  --bg1: #1e3c72;
+  --bg2: #2a5298;
 }
 
 /* Reset */
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family: 'Poppins', sans-serif;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
   min-height:100vh;
   display:flex;
+  flex-direction:column;
   align-items:center;
-  justify-content:center;
-  background: linear-gradient(120deg, #3db0ff 0%, #8f6bff 50%, #ff7eb3 100%);
-}
-
-/* card (center) */
-.page{width:100%;display:flex;align-items:center;justify-content:center;padding:40px 20px}
-.card{
-  width:var(--card-width);
-  background: var(--glass);
-  backdrop-filter: blur(8px);
-  border-radius:14px;
-  padding:22px;
-  box-shadow: 0 18px 50px rgba(18,22,35,0.25);
+  justify-content:flex-start;
+  padding:30px 20px;
   color:#fff;
 }
 
-/* title */
-h1{font-size:1.35rem;text-align:center;margin-bottom:14px;font-weight:600}
+/* Banner */
+.banner{
+  width:100%;
+  background:rgba(255,255,255,0.1);
+  padding:6px;
+  border-radius:8px;
+  margin-bottom:20px;
+  font-weight:500;
+}
 
-/* form: input + button */
-.form{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+/* Card utama dengan glow */
+.card{
+  width: min(480px, 95vw);
+  padding:22px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 25px rgba(0,255,170,0.4),0 0 50px rgba(0,200,255,0.25);
+  animation: pulseGlow 5s infinite alternate;
+  text-align:center;
+}
+@keyframes pulseGlow {
+  from { box-shadow:0 0 20px rgba(0,255,170,0.3); }
+  to { box-shadow:0 0 40px rgba(0,200,255,0.6); }
+}
+
+.card h1{margin-bottom:14px;font-size:1.4rem;font-weight:700}
+
+/* Input */
 .input{
-  flex:1;
-  padding:10px 12px;
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
   border-radius:10px;
-  border: none;
-  background: rgba(255,255,255,0.9);
-  color:#111;
+  border:none;
+  outline:none;
   font-size:0.95rem;
-  outline: none;
-  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05);
+  color:#111;
 }
 
-/* button group */
-.btn-group{display:flex;gap:8px}
-.btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600;color:#fff;transition: transform .15s ease, box-shadow .15s ease}
-.btn:active{transform: translateY(1px)}
-
-/* add = warm gradient, call = green */
-.btn-add{
-  background: linear-gradient(90deg,#ff6b6b,#ffb26b);
-  box-shadow: 0 6px 18px rgba(255,107,107,0.18);
+/* Tombol */
+.actions{display:flex;justify-content:center;gap:12px;margin-bottom:12px}
+.btn{
+  padding:10px 18px;
+  border:none;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  color:#fff;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
-.btn-call{
-  background: linear-gradient(90deg,#00c98a,#00a86b);
-  box-shadow: 0 6px 18px rgba(0,201,138,0.18);
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
+.btn-add{background:linear-gradient(135deg,#ff6b6b,#ff9f43)}
+.btn-call{background:linear-gradient(135deg,#00b09b,#96c93d)}
 
-/* message */
-.message{height:22px;margin-bottom:8px;font-size:0.87rem;opacity:0;transition:opacity .25s ease}
+/* Pesan */
+.message{height:20px;font-size:0.9rem;margin-bottom:10px;opacity:0;transition:opacity .3s}
 .message.show{opacity:1}
 
-/* display LED-like */
-.display{background:#0e0e0e;border-radius:12px;padding:18px 16px;margin:12px auto;box-shadow: 0 0 28px rgba(0,208,132,0.18);text-align:center}
-.display .label{font-size:0.85rem;color:#b7f7c9;margin-bottom:6px;letter-spacing:1px}
-.value{font-family: 'Roboto Mono', monospace;font-size:1.6rem;color:var(--accent);letter-spacing:4px}
-
-/* blink animation */
-@keyframes blinkText {
-  0%{opacity:0.15; text-shadow:none}
-  30%{opacity:1; text-shadow:0 0 8px rgba(0,208,132,0.9)}
-  100%{opacity:1}
+/* Display */
+.display{
+  background:#000;
+  border-radius:12px;
+  padding:16px;
+  margin-bottom:14px;
+  box-shadow:0 0 20px rgba(0,255,170,0.4);
 }
-.display.blink .value{animation: blinkText .9s ease;}
+.label{font-size:0.85rem;color:#bbb;margin-bottom:6px}
+.value{
+  font-family:'Orbitron',monospace;
+  font-size:1.8rem;
+  color:var(--accent);
+  text-shadow:0 0 10px var(--accent);
+}
 
-/* flash red when empty */
-.display.flash-empty{box-shadow: 0 0 20px rgba(255,80,80,0.35)}
-.display.flash-empty .value{color:#ff8a8a}
+/* Lists */
+.lists{display:flex;flex-direction:column;gap:10px}
+.list{
+  background:rgba(255,255,255,0.07);
+  border-radius:12px;
+  padding:10px;
+}
+.list h3{margin-bottom:8px;font-size:0.95rem}
+.list-body{
+  max-height:120px;
+  overflow:auto;
+  font-size:0.9rem;
+}
+.item{
+  padding:8px;
+  border-radius:8px;
+  background:rgba(0,0,0,0.2);
+  margin-bottom:6px;
+}
 
-/* lists */
-.lists{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-.list{background: rgba(255,255,255,0.06);padding:12px;border-radius:10px}
-.list h2{font-size:0.95rem;margin-bottom:8px;color:#fff}
-.list-body{min-height:42px;font-size:0.95rem;color:rgba(255,255,255,0.95)}
-.item{padding:8px;border-radius:8px;background: rgba(0,0,0,0.12);margin-bottom:8px;font-size:0.92rem}
+/* Scrollbar */
+.list-body::-webkit-scrollbar{width:8px}
+.list-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.2);border-radius:6px}
 
-/* small screens: keep same vertical layout but smaller spacing */
-@media (max-width:420px){
-  .card{padding:16px;border-radius:12px}
-  .value{font-size:1.25rem}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Banner teks berjalan */
+.banner {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.banner span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 12s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Card utama dengan glow neon */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  width: 350px;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.5);
+  text-align: center;
+  animation: pulseGlow 3s infinite alternate;
+}
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 15px rgba(0, 255, 200, 0.5); }
+  to { box-shadow: 0 0 35px rgba(0, 255, 200, 0.9); }
+}
+
+h2 {
+  margin-top: 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Input + tombol */
+#namaInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn:active {
+  transform: scale(0.95);
+}
+
+.tambah { background: linear-gradient(45deg, #ff6a00, #ee0979); }
+.panggil { background: linear-gradient(45deg, #00b09b, #96c93d); }
+
+/* Display sedang dilayani */
+.display {
+  background: #000;
+  color: #00ffcc;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px #00ffcc;
+}
+.display h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* List antrian + riwayat */
+.lists {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.list-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  max-height: 120px;
+  overflow-y: auto;
+}
+.list-box h4 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+.list-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list-box li {
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border-radius: 6px;
 }
