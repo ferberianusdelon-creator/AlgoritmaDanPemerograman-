@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistem Antrian Loket</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sistem Antrian Loket — Modern Glow</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Antrian Loket</h1>
-
-    <div class="loket">
-      <h2>Nomor Dipanggil:</h2>
-      <div id="current" class="current">-</div>
-    </div>
-
-    <div class="buttons">
-      <button id="ambil">Ambil Nomor</button>
-      <button id="panggil">Panggil Antrian</button>
-    </div>
-
-    <div class="list">
-      <h3>Daftar Antrian:</h3>
-      <ul id="queue"></ul>
-    </div>
+  <!-- Banner berjalan -->
+  <div class="banner">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+       Selamat datang di Sistem Antrian Loket 
+    </marquee>
   </div>
+
+  <main class="card" role="main" aria-labelledby="appTitle">
+    <h1 id="appTitle">Sistem Antrian Loket</h1>
+
+    <!-- Input -->
+    <input id="namaInput" class="input" type="text" placeholder="Masukkan nama" aria-label="Nama pengunjung">
+
+    <!-- Tombol -->
+    <div class="actions">
+      <button id="btnTambah" class="btn btn-add">➕ Tambah</button>
+      <button id="btnPanggil" class="btn btn-call">📢 Panggil</button>
+    </div>
+
+    <div id="message" class="message" aria-live="polite"></div>
+
+    <!-- Display -->
+    <section id="display" class="display" aria-live="polite">
+      <div class="label">Sedang Dilayani</div>
+      <div id="displayValue" class="value">--</div>
+    </section>
+
+    <!-- Daftar & Riwayat -->
+    <section class="lists">
+      <div class="list">
+        <h3>Daftar Antrian</h3>
+        <div id="daftarAntrian" class="list-body">Kosong</div>
+      </div>
+
+      <div class="list">
+        <h3>Riwayat Panggilan</h3>
+        <div id="riwayat" class="list-body">Belum ada panggilan</div>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
