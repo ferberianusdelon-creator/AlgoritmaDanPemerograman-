@@ -1,56 +1,24 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sistem Antrian Loket — Modern Glow</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembalik Kata Interaktif</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Banner berjalan -->
-  <div class="banner">
-    <marquee behavior="scroll" direction="left" scrollamount="5">
-       Selamat datang di Sistem Antrian Loket 
-    </marquee>
-  </div>
+  <div class="container">
+    <h1>🔄 Pembalik Urutan String</h1>
+    <p>Ketikkan kata atau kalimat di bawah ini, lalu lihat keajaibannya!</p>
 
-  <main class="card" role="main" aria-labelledby="appTitle">
-    <h1 id="appTitle">Sistem Antrian Loket</h1>
+    <input type="text" id="userInput" placeholder="Masukkan kata atau kalimat..." />
+    <button id="reverseBtn">Balikkan!</button>
 
-    <!-- Input -->
-    <input id="namaInput" class="input" type="text" placeholder="Masukkan nama" aria-label="Nama pengunjung">
-
-    <!-- Tombol -->
-    <div class="actions">
-      <button id="btnTambah" class="btn btn-add">➕ Tambah</button>
-      <button id="btnPanggil" class="btn btn-call">📢 Panggil</button>
+    <div id="resultBox">
+      <h2>Hasil:</h2>
+      <p id="output">-</p>
     </div>
-
-    <div id="message" class="message" aria-live="polite"></div>
-
-    <!-- Display -->
-    <section id="display" class="display" aria-live="polite">
-      <div class="label">Sedang Dilayani</div>
-      <div id="displayValue" class="value">--</div>
-    </section>
-
-    <!-- Daftar & Riwayat -->
-    <section class="lists">
-      <div class="list">
-        <h3>Daftar Antrian</h3>
-        <div id="daftarAntrian" class="list-body">Kosong</div>
-      </div>
-
-      <div class="list">
-        <h3>Riwayat Panggilan</h3>
-        <div id="riwayat" class="list-body">Belum ada panggilan</div>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
