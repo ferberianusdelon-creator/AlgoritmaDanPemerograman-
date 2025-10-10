@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pencarian Judul Buku (Linear Search)</title>
+  <title>Tiga Angka Terbesar</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>📚 Daftar Judul Buku</h1>
-    <ul id="daftar-buku"></ul>
+    <h1>Cari 3 Angka Terbesar</h1>
 
-    <div class="search-box">
-      <input type="text" id="inputJudul" placeholder="Ketik judul buku yang dicari...">
-      <button id="btnCari">Cari Buku</button>
-    </div>
+    <label for="inputArray">Masukkan angka (pisahkan dengan koma):</label>
+    <input type="text" id="inputArray" placeholder="contoh: 12, 7, 45, 3, 29">
+    <button id="btnCari">Cari</button>
 
-    <div id="hasil" class="hasil"></div>
+    <div id="hasil"></div>
   </div>
 
   <script src="script.js"></script>
