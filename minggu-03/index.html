@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sistem Antrian Loket — Modern</title>
+  <title>Sistem Antrian Loket — Modern Glow</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
@@ -11,62 +11,46 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header class="top">
-      <div class="brand">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <rect x="3" y="3" width="18" height="18" rx="4" fill="#fff" opacity="0.08"/>
-          <path d="M7 12h10M7 8h10M7 16h6" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div>
-          <div class="title">Sistem Antrian Loket</div>
-          <div class="subtitle">Sederhana • Cepat • Modern</div>
-        </div>
-      </div>
-    </header>
-
-    <main class="card" role="main" aria-labelledby="appTitle">
-      <h1 id="appTitle" class="hidden">Sistem Antrian Loket</h1>
-
-      <!-- form row -->
-      <div class="row form-row">
-        <input id="namaInput" class="input" type="text" placeholder="Masukkan nama" aria-label="Nama pengunjung">
-        <div class="actions">
-          <button id="btnTambah" class="btn btn-gradient" title="Tambah antrian" aria-label="Tambah antrian">
-            <!-- plus icon -->
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 5v14M5 12h14" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Tambah</span>
-          </button>
-          <button id="btnPanggil" class="btn btn-call" title="Panggil berikutnya" aria-label="Panggil berikutnya">
-            <!-- speaker icon -->
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 8a5 5 0 010 8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
-            <span>Panggil</span>
-          </button>
-        </div>
-      </div>
-
-      <div id="message" class="message" aria-live="polite"></div>
-
-      <!-- display LED -->
-      <section id="display" class="display" aria-live="polite">
-        <div class="label">Sedang Dilayani</div>
-        <div id="displayValue" class="value">--</div>
-      </section>
-
-      <!-- lists -->
-      <section class="lists">
-        <div class="list">
-          <h3>Daftar Antrian</h3>
-          <div id="daftarAntrian" class="list-body">Kosong</div>
-        </div>
-
-        <div class="list">
-          <h3>Riwayat Panggilan</h3>
-          <div id="riwayat" class="list-body">Belum ada panggilan</div>
-        </div>
-      </section>
-    </main>
+  <!-- Banner berjalan -->
+  <div class="banner">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      Selamat datang di Sistem Antrian Loket 
+    </marquee>
   </div>
+
+  <main class="card" role="main" aria-labelledby="appTitle">
+    <h1 id="appTitle">Sistem Antrian Loket</h1>
+
+    <!-- Input -->
+    <input id="namaInput" class="input" type="text" placeholder="Masukkan nama" aria-label="Nama pengunjung">
+
+    <!-- Tombol -->
+    <div class="actions">
+      <button id="btnTambah" class="btn btn-add">➕ Tambah</button>
+      <button id="btnPanggil" class="btn btn-call">📢 Panggil</button>
+    </div>
+
+    <div id="message" class="message" aria-live="polite"></div>
+
+    <!-- Display -->
+    <section id="display" class="display" aria-live="polite">
+      <div class="label">Sedang Dilayani</div>
+      <div id="displayValue" class="value">--</div>
+    </section>
+
+    <!-- Daftar & Riwayat -->
+    <section class="lists">
+      <div class="list">
+        <h3>Daftar Antrian</h3>
+        <div id="daftarAntrian" class="list-body">Kosong</div>
+      </div>
+
+      <div class="list">
+        <h3>Riwayat Panggilan</h3>
+        <div id="riwayat" class="list-body">Belum ada panggilan</div>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
