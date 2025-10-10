@@ -1,96 +1,79 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f9ff;
+  background: #f2f6fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
 }
 
 .container {
-  width: 60%;
-  margin: 50px auto;
   background: #ffffff;
-  padding: 30px;
+  padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(227, 43, 255, 0.3);
 }
 
 h1 {
-  text-align: center;
-  color: #2c3e50;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.kamus-box {
-  background: #f8faff;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  padding: 20px;
+p {
+  font-size: 15px;
   margin-bottom: 20px;
-  text-align: center;
-}
-
-.kamus-box h2 {
-  margin: 0 0 10px;
-  font-size: 18px;
-  color: #2c3e50;
-}
-
-.kamus-box p {
-  margin-bottom: 15px;
   color: #555;
 }
 
-.grid-kamus {
-  display: inline-flex;
-  gap: 50px;
-}
-
-.grid-kamus ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.grid-kamus li {
-  line-height: 1.8;
-  color: #34495e;
-  text-align: left;
-}
-
 input {
-  width: 95%;
+  width: 70%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   font-size: 14px;
 }
 
 button {
-  width: 100%;
-  padding: 12px;
   background: #3498db;
   color: white;
   border: none;
-  border-radius: 8px;
+  padding: 12px 24px;
   font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
-button:hover {
-  background: #2980b9;
-}
+button:hover { background: #2980b9; }
+button:active { transform: scale(0.95); }
 
-#hasil {
+.hasil-wrapper {
+  display: flex;
+  gap: 20px;
   margin-top: 20px;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
 }
 
-#hasil.sukses {
-  color: green;
+.hasil-box {
+  flex: 1;
+  background: #f9f9f9;
+  border-left: 6px solid #3498db;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+  text-align: left;
+  min-height: 120px;   /* supaya tetap rapi walau kosong */
 }
 
-#hasil.gagal {
-  color: red;
+.hasil-box.success { border-left-color: green; }
+.hasil-box.fail    { border-left-color: red; }
+
+@media (max-width: 768px) {
+  .hasil-wrapper { flex-direction: column; }
 }

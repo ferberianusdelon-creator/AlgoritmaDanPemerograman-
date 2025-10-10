@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pencarian Warna - Binary Search</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistem Pencarian Produk Supermarket</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Pencarian Warna dengan Binary Search</h1>
-    
-    <div class="kamus-box">
-      <h2>Kamus Warna</h2>
-      <p>Berikut adalah daftar warna yang bisa kamu cari, sudah tersusun rapi secara alfabetis:</p>
-      <div class="grid-kamus">
-        <ul>
-          <li>biru</li>
-          <li>hijau</li>
-          <li>hitam</li>
-          <li>kuning</li>
-        </ul>
-        <ul>
-          <li>merah</li>
-          <li>putih</li>
-          <li>ungu</li>
-          <li>abu-abu</li>
-        </ul>
-      </div>
-    </div>
+    <h1>🛒 Sistem Pencarian Produk Supermarket</h1>
+    <p>Masukkan <b>barcode</b> produk untuk melihat perbandingan
+       <i>Linear Search</i> dan <i>Binary Search</i>.
+    </p>
 
-    <p>Masukkan warna yang ingin dicari:</p>
-    <input type="text" id="inputTarget" placeholder="contoh: merah">
-    
-    <button onclick="cariKata()">Cari</button>
-    
-    <div id="hasil"></div>
+    <input type="number" id="inputBarcode" placeholder="contoh: 1234" />
+    <button id="btnCari">Cari Produk</button>
+
+    <div class="hasil-wrapper">
+      <div id="hasil-linear" class="hasil-box">Linear Search</div>
+      <div id="hasil-binary" class="hasil-box">Binary Search</div>
+    </div>
   </div>
-  <script src="scrip.js"></script>
+
+
+  <script src="data barcode.js"></script>
+  <script src="proses.js"></script>
 </body>
 </html>

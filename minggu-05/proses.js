@@ -1,4 +1,3 @@
-// ====== Algoritma ======
 function linearSearch(arr, target) {
   const steps = [];
   for (let i = 0; i < arr.length; i++) {
@@ -30,9 +29,6 @@ function binarySearch(arr, target) {
   return { index: -1, steps };
 }
 
-
-
-
 document.getElementById("btnCari").addEventListener("click", cariProduk);
 
 function cariProduk() {
@@ -49,7 +45,6 @@ function cariProduk() {
     return;
   }
 
-  // --- Linear Search ---
   const hasilLinear = linearSearch(daftarProduk, target);
   if (hasilLinear.index !== -1) {
     linearBox.className = "hasil-box success";
@@ -62,7 +57,6 @@ function cariProduk() {
       hasilLinear.steps.join("\n") + "\n\nProduk tidak ditemukan.";
   }
 
-  // --- Binary Search ---
   const hasilBinary = binarySearch(daftarProduk, target);
   if (hasilBinary.index !== -1) {
     binaryBox.className = "hasil-box success";
