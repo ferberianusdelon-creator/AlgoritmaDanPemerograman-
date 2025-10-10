@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble Sort Mahasiswa</title>
+  <link rel="stylesheet" href="ter.css">
+</head>
+<body>
+
+  <h2>Program Bubble Sort Nilai Mahasiswa</h2>
+  <p>Edit nilai atau nama lalu klik tombol untuk mengurutkan 👇</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Nilai</th>
+      </tr>
+    </thead>
+    <tbody id="tabelMahasiswa"></tbody>
+  </table>
+
+  <div class="buttons">
+    <button onclick="bubbleSort('ascending')">Urutkan Ascending</button>
+    <button onclick="bubbleSort('descending')">Urutkan Descending</button>
+  </div>
+
+  <p id="status"></p>
+
+  <script src="klik.js"></script>
+</body>
+</html>
